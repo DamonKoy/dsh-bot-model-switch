@@ -1,0 +1,62 @@
+{
+  "name": "dsh-bot-model-switch",
+  "version": "0.3.0",
+  "type": "module",
+  "description": "Switch every Bot in a DS Bot team to one model at once, or set each Bot individually. Writes through DS Bot's own update-bot channel instead of racing the running engine over state.json.",
+  "main": "lib/index.js",
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": {
+      "default": "./lib/client.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "cordis.patch.yml",
+    "README.md",
+    "README.zh.md",
+    "LICENSE"
+  ],
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "ds-bot",
+    "model-switch",
+    "team"
+  ],
+  "dsh": {
+    "manifestVersion": 1,
+    "engines": {
+      "dsh": ">=0.2.1-0 <0.3.0-0 || >=0.2.2-alpha.2 <0.3.0-0"
+    },
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "inject": [],
+      "platform": "web"
+    },
+    "capabilities": [
+      "network:egress"
+    ],
+    "labels": []
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=18",
+    "dsh": ">=0.2.1-0 <0.3.0-0 || >=0.2.2-alpha.2 <0.3.0-0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamonKoy/dsh-bot-model-switch.git"
+  },
+  "homepage": "https://github.com/DamonKoy/dsh-bot-model-switch#readme",
+  "bugs": {
+    "url": "https://github.com/DamonKoy/dsh-bot-model-switch/issues"
+  }
+}
