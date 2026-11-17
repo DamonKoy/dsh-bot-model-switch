@@ -4,3 +4,6 @@ node_modules/
 *.bak
 *.bak-*
 state.json
+
+# internal notes stay out of the package
+交接说明.md
