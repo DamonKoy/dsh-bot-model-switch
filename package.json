@@ -1,6 +1,6 @@
 {
   "name": "dsh-bot-model-switch",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "type": "module",
   "description": "Switch every Bot model at once, or set each Bot individually, through DS Bot own update-bot channel.",
   "homepage": "https://github.com/DamonKoy/dsh-bot-model-switch#readme",
