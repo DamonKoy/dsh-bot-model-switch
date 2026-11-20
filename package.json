@@ -3,6 +3,23 @@
   "version": "0.4.0",
   "type": "module",
   "description": "Switch every Bot model at once, or set each Bot individually, through DS Bot own update-bot channel.",
+  "homepage": "https://github.com/DamonKoy/dsh-bot-model-switch#readme",
+  "keywords": [
+    "deepseek",
+    "harness",
+    "dsh",
+    "dsh-plugin",
+    "ds-bot",
+    "model-switch",
+    "team"
+  ],
+  "repository": {
+    "url": "git+https://github.com/DamonKoy/dsh-bot-model-switch.git",
+    "type": "git"
+  },
+  "bugs": {
+    "url": "https://github.com/DamonKoy/dsh-bot-model-switch/issues"
+  },
   "main": "lib/index.js",
   "files": [
     "lib",
@@ -19,7 +36,7 @@
   },
   "dsh": {
     "engines": {
-      "dsh": ">=0.2.1-rc.4"
+      "dsh": ">=0.2.1-0 <0.3.0-0 || >=0.2.2-alpha.2 <0.3.0-0"
     },
     "bundle": {
       "patch": "./cordis.patch.yml"
@@ -36,11 +53,12 @@
     "capabilities": [
       "network:egress"
     ],
+    "manifestVersion": 1,
     "labels": []
   },
   "license": "MIT",
   "engines": {
-    "dsh": ">=0.2.1-rc.4",
+    "dsh": ">=0.2.1-0 <0.3.0-0 || >=0.2.2-alpha.2 <0.3.0-0",
     "node": ">=18"
   },
   "peerDependencies": {

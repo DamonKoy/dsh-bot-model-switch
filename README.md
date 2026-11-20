@@ -22,7 +22,7 @@ Built for [DS Bot](https://github.com/Fei2411/DS-Bot) — a team of long-lived B
 
 ## Requirement — read this first
 
-**This plugin needs a DS Bot host.** It is built against DSH 0.2.1-rc.4 and declares `engines.dsh >=0.2.1-rc.4`; a newer host is fine. It talks to `POST api/bot`, the endpoint DS Bot adds on top of DeepSeek Harness for its team view. A plain `dsh web` profile does not serve that route, so the card will load but every read fails with `unauthorized` and no model list appears.
+**This plugin needs a DS Bot host.** It is built against DSH 0.2.1-rc.4, and that is the only host version it has actually been run on. It declares `engines.dsh >=0.2.1-0 <0.3.0-0 || >=0.2.2-alpha.2 <0.3.0-0`: the whole 0.2.1 line plus the 0.2.2 prerelease line are accepted, 0.3.x is refused. The 0.2.2 line is declared compatible but has not been run-tested. It talks to `POST api/bot`, the endpoint DS Bot adds on top of DeepSeek Harness for its team view. A plain `dsh web` profile does not serve that route, so the card will load but every read fails with `unauthorized` and no model list appears.
 
 That is also why the host half (`lib/index.js`) is deliberately empty. All writes go through the host's own `update-bot` endpoint, so the running Bot engine stays the single writer of its state. A plugin that wrote `state.json` directly would race the engine and lose somebody's message — this plugin does not do that.
 
