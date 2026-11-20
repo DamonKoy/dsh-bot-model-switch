@@ -4,6 +4,10 @@
   "type": "module",
   "description": "Switch every Bot model at once, or set each Bot individually, through DS Bot own update-bot channel.",
   "main": "lib/index.js",
+  "files": [
+    "lib",
+    "cordis.patch.yml"
+  ],
   "exports": {
     ".": {
       "default": "./lib/index.js"
