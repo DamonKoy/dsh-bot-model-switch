@@ -2,10 +2,10 @@
 #
 # The row is a bare plugin by package name. The `dsh.client` declaration in
 # package.json makes the browser half (exports "./client", served at
-# /plugins/<id>/client.js) load into the web GUI, which is where the card
+# /plugins/<id>/client.js) load into the web GUI, which is where the button
 # lives. The node half (exports ".") stays minimal: it exists only so the row
 # resolves, because every mutation goes through DS Bot's own `update-bot`
 # endpoint rather than through this process.
 - insert:
-    - id: bot-model-switch
+    - id: model-switch
       name: dsh-bot-model-switch

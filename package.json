@@ -1,8 +1,8 @@
 {
   "name": "dsh-bot-model-switch",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "type": "module",
-  "description": "Switch every Bot in a DS Bot team to one model at once, or set each Bot individually. Writes through DS Bot's own update-bot channel instead of racing the running engine over state.json.",
+  "description": "Switch every Bot model at once, or set each Bot individually, through DS Bot own update-bot channel.",
   "main": "lib/index.js",
   "exports": {
     ".": {
@@ -13,32 +13,20 @@
     },
     "./package.json": "./package.json"
   },
-  "files": [
-    "lib",
-    "cordis.patch.yml",
-    "README.md",
-    "README.zh.md",
-    "LICENSE"
-  ],
-  "keywords": [
-    "deepseek",
-    "harness",
-    "dsh",
-    "dsh-plugin",
-    "ds-bot",
-    "model-switch",
-    "team"
-  ],
   "dsh": {
-    "manifestVersion": 1,
     "engines": {
-      "dsh": ">=0.2.1-0 <0.3.0-0 || >=0.2.2-alpha.2 <0.3.0-0"
+      "dsh": ">=0.2.1-rc.4"
     },
     "bundle": {
       "patch": "./cordis.patch.yml"
     },
     "client": {
-      "inject": [],
+      "inject": [
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings",
+        "@deepseek-ai/dsh-client-ui-renderer",
+        "@deepseek-ai/dsh-client-ui-layout"
+      ],
       "platform": "web"
     },
     "capabilities": [
@@ -48,15 +36,10 @@
   },
   "license": "MIT",
   "engines": {
-    "node": ">=18",
-    "dsh": ">=0.2.1-0 <0.3.0-0 || >=0.2.2-alpha.2 <0.3.0-0"
+    "dsh": ">=0.2.1-rc.4",
+    "node": ">=18"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/DamonKoy/dsh-bot-model-switch.git"
-  },
-  "homepage": "https://github.com/DamonKoy/dsh-bot-model-switch#readme",
-  "bugs": {
-    "url": "https://github.com/DamonKoy/dsh-bot-model-switch/issues"
+  "peerDependencies": {
+    "@deepseek-ai/dsh-client-connection": "*"
   }
 }
